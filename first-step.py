@@ -1,6 +1,5 @@
 import cv2 as cv
 cap = cv.VideoCapture(0)
-#kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (3,3))
 fgbg = cv.bgsegm.createBackgroundSubtractorMOG()
 #fgbg = cv.bgsegm.BackgroundSubtractorGMG()
 #fgbg = cv.createBackgroundSubtractorMOG2(detectShadows=True)
