@@ -1,6 +1,8 @@
 import cv2 as cv
 cap = cv.VideoCapture(0)
 fgbg = cv.bgsegm.createBackgroundSubtractorMOG()
+
+#other ways
 #fgbg = cv.bgsegm.BackgroundSubtractorGMG()
 #fgbg = cv.createBackgroundSubtractorMOG2(detectShadows=True)
 #fgbg = cv.createBackgroundSubtractorKNN(detectShadows=True)
@@ -9,7 +11,6 @@ while True:
     if frame is None:
         break
     fgmask = fgbg.apply(frame)
-    #fgmask = cv.morphologyEx(fgmask, cv.MORPH_OPEN, kernel)
 
     cv.imshow('Frame', frame)
     cv.imshow('FG MASK Frame', fgmask)
