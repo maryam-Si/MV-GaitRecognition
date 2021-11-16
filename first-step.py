@@ -22,7 +22,7 @@ while True:
         break
     fgmask = fgbg.apply(frame)
 
-    # reducing noise by median filter
+    # removing noise by median filter
     filteredFrame = cv.medianBlur(fgmask,5)
 
     cv.imshow('Frame', frame)
@@ -31,6 +31,6 @@ while True:
     keyboard = cv.waitKey(30)
     if keyboard == 'q' or keyboard == 27:
         break
-
+    
 cap.release()
 cv.destroyAllWindows()
